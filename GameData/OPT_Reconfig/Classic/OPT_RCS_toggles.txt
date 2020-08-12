@@ -1,6 +1,6 @@
 @PART:HAS[#manufacturer[OPT?Aerospace?Division],@MODULE[ModuleRCSFX]:HAS[#resourceName[MonoPropellant]]]:NEEDS[B9PartSwitch]
 {
-	@description ^= :$: <color="green">This part can change its RCS fuel mix.</color>
+	@description ^= :$: <br><color="green">This part can change its RCS fuel mix.</color>
 	MODULE
 	{
 		name = ModuleB9PartSwitch
@@ -14,7 +14,6 @@
 			title = Kerolox
 			primaryColor = ResourceColorLiquidFuel
 			secondaryColor = ResourceColorOxidizer
-			descriptionSummary = 
 			descriptionDetail = Uses the stock LiquidFuel & Oxidizer mix, and uses it very well.<br><b>Isp:</b> 140 s ASL / <color="yellow">260 s</color> Vac.
 			MODULE
 			{
