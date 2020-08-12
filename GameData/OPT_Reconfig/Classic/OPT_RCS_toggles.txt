@@ -51,6 +51,7 @@
 			title = PropLox
 			primaryColor = ResourceColorLqdHydrogen
 			secondaryColor = ResourceColorOxidizer
+			defaultSubtypePriority = 2
 			descriptionDetail = Uses the Propellium & Oxidizer mix.<br><b>Isp:</b> 136 s ASL / <color="yellow">340 s</color> Vac.
 			MODULE
 			{
