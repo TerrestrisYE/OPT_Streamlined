@@ -1,0 +1,147 @@
+@PART[opt_powersphere1a]
+{
+	@description ^= :$: <br><color="green">This part can change its fuel inputs.</color>	
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		moduleID = FuelSelect
+		switcherDescription = Fuel 
+		switcherDescriptionPlural = Fuel Selections
+		switchInFlight = True
+		SUBTYPE
+		{
+			name = LFO
+			title = LFO
+			primaryColor = ResourceColorLiquidFuel
+			secondaryColor = ResourceColorOxidizer
+			descriptionSummary = LiquidFuel + Oxidizer
+			descriptionDetail = <b>Inputs = </b> 0.045 LF/s + 0.055 OX/s <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleResourceConverter
+					ConverterName = Super Cell
+				}
+				DATA
+				{
+					INPUT_RESOURCE
+					{
+						ResourceName = LiquidFuel
+						Ratio = 0.045
+					}
+					INPUT_RESOURCE
+					{
+						ResourceName = Oxidizer
+						Ratio = 0.055
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LF
+			title = LF
+			primaryColor = ResourceColorLiquidFuel
+			secondaryColor = ResourceColorLiquidFuel
+			descriptionSummary = LiquidFuel
+			descriptionDetail = <b>Inputs = </b> 0.1 LF/s <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleResourceConverter
+					ConverterName = Super Cell
+				}
+				DATA
+				{
+					INPUT_RESOURCE
+					{
+						ResourceName = LiquidFuel
+						Ratio = 0.1
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = MONO
+			title = Mono
+			primaryColor = ResourceColorMonoPropellant
+			secondaryColor = ResourceColorMonoPropellant
+			descriptionSummary = MonoPropellant
+			descriptionDetail = <b>Inputs = </b> 0.15 Mono/s <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleResourceConverter
+					ConverterName = Super Cell
+				}
+				DATA
+				{
+					INPUT_RESOURCE
+					{
+						ResourceName = MonoPropellant
+						Ratio = 0.15
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LH2O
+			title = PLOX
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor = ResourceColorOxidizer
+			descriptionSummary = Propellium + Oxidizer
+			descriptionDetail = <b>Inputs = </b> 0.03 PLM/s (108 PLM/hr) + 0.01 OX/s (36 OX/hr) <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleResourceConverter
+					ConverterName = Super Cell
+				}
+				DATA
+				{
+					INPUT_RESOURCE
+					{
+						ResourceName = Propellium
+						Ratio = 0.03
+					}
+					INPUT_RESOURCE
+					{
+						ResourceName = Oxidizer
+						Ratio = 0.01
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LH2
+			title = PLM
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor = ResourceColorLqdHydrogen
+			descriptionSummary = Propellium
+			descriptionDetail = <b>Inputs = </b> 0.06 PLM/s (216 PLM/hr) <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleResourceConverter
+					ConverterName = Super Cell
+				}
+				DATA
+				{
+					INPUT_RESOURCE
+					{
+						ResourceName = Propellium
+						Ratio = 0.06
+					}
+				}
+			}
+		}
+	}
+}
