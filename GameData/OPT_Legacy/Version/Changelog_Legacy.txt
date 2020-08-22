@@ -1,5 +1,15 @@
 OPT Legacy Spaceplane Parts
 
+2.1.2
+
+* Adjusted air-breathing performance of J-60D engine. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.
+  * Adjusted J-60 stationary thrust to match.
+* Added missing attach nodes to Avatar Inline SAS.
+* Fixed broken heat limit key in Stail bicoupler. (Spotted by @ Lisias.)
+* Removed obsolete keys from some air-breathing engines.
+* Removed extra lift module from K lab.
+
+
 2.1.1
 
 * Deleted files concerning agency and categories. Moved to OPT Reconfig.

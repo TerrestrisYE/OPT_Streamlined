@@ -1,5 +1,11 @@
 OPT Reconfig
 
+2.1.1
+
+* (Rewrote WBI integration and phased out Pathfinder legacy templates.) It's all OmniConverters and OmniStorage. Always has been.
+* OPT in ClassicStock play mode uses "PropLox" fuel mix (Propellium + Oxidizer, equivalent to Hydrolox).
+* Deleted GPOSpeed fuel patch. Unknown if it suports Omnistorage.
+
 2.1.0
 
 * Absorbed and unified configs and other resources from OPT Main (now Continued).
