@@ -1,3 +1,8 @@
+@PART:HAS[#manufacturer[OPT?Aerospace?Division],#TankTag[OPTSAS]]
+{
+	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[OPTSAS]] {}
+}
+
 @PART:HAS[#manufacturer[OPT?Aerospace?Division],@MODULE[ModuleRCSFX]:HAS[#resourceName[MonoPropellant]]]:NEEDS[B9PartSwitch]
 {
 	@description ^= :$: <br><color="green">This part can change its RCS fuel mix.</color>
