@@ -15,13 +15,13 @@
 		{
 			@ratio = 4
 		}
-		// @PROPELLANT[ElectricCharge] // for J92 Shcramjet mode, nerf it from 73
-		// {
-			// @ratio = 1
-		// }
+		@PROPELLANT[ElectricCharge] // for J92 Shcramjet mode, nerf it from 73
+		{
+			@ratio = 4.81
+		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -42,7 +42,7 @@
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
 		}
 	}
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
@@ -75,7 +75,7 @@
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 1.2
+			@key,*[1, ] *= 3.7
 		}
 	}
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
@@ -91,7 +91,7 @@
 		}
 		// @PROPELLANT[ElectricCharge]
 		// {
-			// @ratio = 8.75
+			// @ratio = 4.75
 		// }
 	}
 }
@@ -107,23 +107,27 @@
 		}
 		@atmosphereCurve
 		{
-			@key,1[1, ] *= 2
+			@key,*[1, ] *= 3.7
 		}
 		%atmChangeFlow = True
-		@atmCurve
-		{
-			!key,* = nope
-key = 0.001 1
-key = 0.1 0.15 0 0
-key = 1 0.15 0 0
-key = 15 0.3 0 0
-		}
+		// @atmCurve
+		// {
+			// !key,* = nope
+			// key = 0.001 1
+			// key = 0.1 0.15 0 0
+			// key = 1 0.15 0 0
+			// key = 15 0.3 0 0
+		// }
 	}
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[Standard]]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
 			@name = Propellium
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -145,11 +149,11 @@ key = 15 0.3 0 0
 		@atmCurve
 		{
 			!key,* = nope
-key = 0.001 1
-key = 0.1 0.4 0 0
-key = 1 0.4 0 0
-key = 1.5 0.4 0 0
-key = 15 0.8 0 0
+			key = 0.001 1
+			key = 0.1 0.4 0 0
+			key = 1 0.4 0 0
+			key = 1.5 0.4 0 0
+			key = 15 0.8 0 0
 		}
 	}
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[Standard]]
@@ -208,12 +212,10 @@ key = 15 0.8 0 0
 	}
 }
 
-// Wrapper engines
-// Valkyrie tilt
-// Sky Light
 // Helicarrier
-// LP-J "Downswell"
-@PART[opt_vtol_wrap?1|opt_vtol_heli1|opt_vtol_jump?1|opt_vtol_hc1|opt_vtol_lpj1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
+// Bubble
+// Valkyrie
+@PART[opt_vtol_hc1|opt_vtol_bubble1|opt_vtol_jumpa1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
 	{
@@ -224,20 +226,102 @@ key = 15 0.8 0 0
 		}
 		@PROPELLANT[IntakeAir]
 		{
-			@ratio /= 4
+			@ratio = 3.5
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
+		}
+	}
+}
+
+// Slipstream
+@PART[opt_vtol_heli1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
+{
+	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 1
+		}
+		@PROPELLANT[IntakeAir]
+		{
+			@ratio = 6.75
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
 
 // Wrappers
+@PART[opt_vtol_wrap?1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
+{
+	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 1
+		}
+		@PROPELLANT[IntakeAir]
+		{
+			@ratio = 2.25
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 3.7
+		}
+	}
+}
+
+// LP-J "Downswell"
+@PART[opt_vtol_lpj1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
+{
+	@MODULE[ModuleEnginesFX]:HAS[#engineID[FanLiquid]]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 1
+		}
+		@PROPELLANT[IntakeAir]
+		{
+			@ratio = 7.5
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 3.7
+		}
+	}
+	@MODULE[ModuleEnginesFX]:HAS[#engineID[FanElectric]]
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 1
+		}
+		@PROPELLANT[Intake???]
+		{
+			@name = Atmosphere
+			@ratio = 7.5
+		}
+		// @atmosphereCurve
+		// {
+			// @key,*[1, ] *= 3.7
+		// }
+	}
+}
+
+// = Closed cycle =
+// Wrappers
 // Valkyrie tilt
 // Helicarrier
 // LP-R 01 "Prominence"
-@PART[opt_vtol_wrap?1|opt_vtol_jump?1|opt_vtol_hc1|opt_vtol_lpr1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
+// Bubble
+@PART[opt_vtol_wrap?1|opt_vtol_jump?1|opt_vtol_hc1|opt_vtol_lpr1|opt_vtol_bubble1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
 	{
@@ -260,42 +344,6 @@ key = 15 0.8 0 0
 		}
 	}
 }
-// Bubble
-@PART[opt_vtol_bubble1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
-{
-	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
-	{
-		@PROPELLANT[LiquidFuel]
-		{
-			@name = Propellium
-			@ratio = 1
-		}
-		// @PROPELLANT[IntakeAir]
-		// {
-			// @ratio /= 4
-		// }
-		@atmosphereCurve
-		{
-			@key,*[1, ] *= 2.25
-		}
-	}
-	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
-	{
-		@PROPELLANT[LiquidFuel]
-		{
-			@name = Propellium
-			@ratio = 3
-		}
-		@PROPELLANT[Oxidizer]
-		{
-			@ratio = 1
-		}
-		@atmosphereCurve
-		{
-			@key,*[1, ] *= 1.5
-		}
-	}
-}
 
 // LP-R 02 "Irradiance"; No Isp buff
 @PART[opt_vtol_lpr2]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
@@ -306,6 +354,10 @@ key = 15 0.8 0 0
 		{
 			@name = Propellium
 			@ratio = 1
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -324,13 +376,13 @@ key = 15 0.8 0 0
 		{
 			@ratio = 1
 		}
-		// @PROPELLANT[ElectricCharge]
-		// {
-			// @ratio *= 0.1455
-		// }
+		@PROPELLANT[ElectricCharge]
+		{
+			@ratio = 7.6702
+		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 1.2
+			@key,*[1, ] *= 1.86
 		}
 	}
 	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[DynoTune]]
@@ -359,7 +411,7 @@ key = 15 0.8 0 0
 					// }
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 2.4 // 1.2
 					}
 				}
 			}
@@ -388,7 +440,7 @@ key = 15 0.8 0 0
 					// }
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 2.4 // 1.2
 					}
 				}
 			}
@@ -417,7 +469,7 @@ key = 15 0.8 0 0
 					// }
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 2.4 // 1.2
 					}
 				}
 			}
@@ -446,7 +498,270 @@ key = 15 0.8 0 0
 					// }
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 2.4 // 1.2
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Fan engines can change their turbine fuel mix
+@PART[opt_vtol_hc1|opt_vtol_bubble1|opt_vtol_jumpa1]:NEEDS[B9PartSwitch]
+{
+	@description ^= :$: <br><color="green">This part can change its turbine fuel mix.</color>
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		moduleID = FuelMix
+		switcherDescription = Turbine Fuel Mix
+		switcherDescriptionPlural = Turbine Fuel options
+		switchInFlight = True
+		SUBTYPE
+		{
+			name = LF
+			title = PLM + Air
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor = LightGrey
+			descriptionSummary = Uses Propellium + IntakeAir
+			descriptionDetail = The default mix. Uses Propellium and ambient Oxygen to drive combustion and requires the remaining ambient Nitrogen for working fluid.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleEnginesFX
+					engineID = AirBreathing
+				}
+				DATA
+				{
+					PROPELLANT
+					{
+						name = Propellium
+						ratio = 1
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = IntakeAir
+						ratio = 3.5
+						ignoreForIsp = True
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LFO
+			title = PLOX + Atm
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor =  ResourceColorOxidizer
+			descriptionSummary = Uses PropLox + Atmosphere
+			descriptionDetail = Uses onboard Propellium and Oxidizer to drive combustion but still requires an atmosphere for working fluid.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleEnginesFX
+					engineID = AirBreathing
+				}
+				DATA
+				{
+					PROPELLANT
+					{
+						name = Propellium
+						ratio = 3
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = Oxidizer
+						ratio = 1
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = Atmosphere
+						ratio = 3.5
+						ignoreForIsp = True
+					}
+				}
+			}
+		}
+	}
+}
+
+// Slipstream
+@PART[opt_vtol_heli1]:NEEDS[B9PartSwitch]
+{
+	@description ^= :$: <br><color="green">This part can change its turbine fuel mix.</color>
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		moduleID = FuelMix
+		switcherDescription = Turbine Fuel Mix
+		switcherDescriptionPlural = Turbine Fuel options
+		switchInFlight = True
+		SUBTYPE
+		{
+			name = LF
+			title = PLM + Air
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor = LightGrey 
+			defaultSubtypePriority = 2
+			descriptionSummary = Uses Propellium + IntakeAir
+			descriptionDetail = The default mix. Uses Propellium and ambient Oxygen to drive combustion and requires the remaining ambient Nitrogen for working fluid.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleEnginesFX
+					engineID = FanLiquid
+				}
+				DATA
+				{
+					PROPELLANT
+					{
+						name = Propellium
+						ratio = 1
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = IntakeAir
+						ratio = 6.75
+						ignoreForIsp = True
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LFO
+			title = PLOX + Atm
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor =  ResourceColorOxidizer
+			defaultSubtypePriority = 1
+			descriptionSummary = Uses PropLox + Atmosphere
+			descriptionDetail = Uses onboard Propellium and Oxidizer to drive combustion but still requires an atmosphere for working fluid.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleEnginesFX
+					engineID = FanLiquid
+				}
+				DATA
+				{
+					PROPELLANT
+					{
+						name = Propellium
+						ratio = 3
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = Oxidizer
+						ratio = 1
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = Atmosphere
+						ratio = 6.75
+						ignoreForIsp = True
+					}
+				}
+			}
+		}
+	}
+}
+
+// Wrappers
+@PART[opt_vtol_wrap?1]:NEEDS[B9PartSwitch]
+{
+	@description ^= :$: <br><color="green">This part can change its turbine fuel mix.</color>
+	MODULE
+	{
+		name = ModuleB9PartSwitch
+		moduleID = FuelMix
+		switcherDescription = Turbine Fuel Mix
+		switcherDescriptionPlural = Turbine Fuel options
+		switchInFlight = True
+		SUBTYPE
+		{
+			name = LF
+			title = PLM + Air
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor = LightGrey 
+			defaultSubtypePriority = 2
+			descriptionSummary = Uses Propellium + IntakeAir
+			descriptionDetail = The default mix. Uses Propellium and ambient Oxygen to drive combustion and requires the remaining ambient Nitrogen for working fluid.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleEnginesFX
+					engineID = AirBreathing
+				}
+				DATA
+				{
+					PROPELLANT
+					{
+						name = Propellium
+						ratio = 1
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = IntakeAir
+						ratio = 2.25
+						ignoreForIsp = True
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LFO
+			title = PLOX + Atm
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor =  ResourceColorOxidizer
+			defaultSubtypePriority = 1
+			descriptionSummary = Uses PropLox + Atmosphere
+			descriptionDetail = Uses onboard Propellium and Oxidizer to drive combustion but still requires an atmosphere for working fluid.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			
+			MODULE
+			{
+				IDENTIFIER
+				{
+					name = ModuleEnginesFX
+					engineID = AirBreathing
+				}
+				DATA
+				{
+					PROPELLANT
+					{
+						name = Propellium
+						ratio = 3
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = Oxidizer
+						ratio = 1
+						DrawGauge = True
+					}
+					PROPELLANT
+					{
+						name = Atmosphere
+						ratio = 2.25
+						ignoreForIsp = True
 					}
 				}
 			}
