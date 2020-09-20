@@ -151,7 +151,6 @@
 			!key,* = nope
 			key = 0.001 1
 			key = 0.1 0.4 0 0
-			key = 1 0.4 0 0
 			key = 1.5 0.4 0 0
 			key = 15 0.8 0 0
 		}
@@ -235,7 +234,7 @@
 	}
 }
 
-// Slipstream
+// Sky Light
 @PART[opt_vtol_heli1]:AFTER[OPT_Legacy] // :NEEDS[CryoEngines|KerbalAtomics]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
