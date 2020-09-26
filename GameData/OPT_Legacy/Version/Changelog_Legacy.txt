@@ -1,6 +1,6 @@
 OPT Legacy Spaceplane Parts
 
-2.1.2
+2.2.0
 
 * Added missing attach nodes to Avatar Inline SAS.
 * Adjusted air-breathing performance of J-60D engine. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.

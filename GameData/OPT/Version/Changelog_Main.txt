@@ -1,6 +1,6 @@
 OPT Continued
 
-2.1.1
+2.2.0
 
 * Fixed bulkheadprofile in Nebula engine. (Spotted by @ Lisias.)
 * Fixed K Drone Core's SAS module still missing.

@@ -1,6 +1,6 @@
 OPT Reconfig
 
-2.1.1
+2.2.0
 
 * Added heat limit upgrades for H noses. (Bundled with Mk2 nose upgrades.)
 * Fixes to IntakeAtm and CryoEngines patches.
