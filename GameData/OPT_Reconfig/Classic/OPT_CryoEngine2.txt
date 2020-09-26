@@ -11,20 +11,20 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 			@ratio = 1
 		}
 		@PROPELLANT[IntakeAir]
 		{
-			@ratio = 0.35
+			@ratio = 4
 		}
 		@PROPELLANT[ElectricCharge] // for J92 Shcramjet mode, nerf it from 73
 		{
-			@ratio = 1
+			@ratio = 4.81
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -36,16 +36,16 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 			@ratio = 1
 		}
 		@PROPELLANT[IntakeAir]
 		{
-			@ratio = 0.35
+			@ratio = 4
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 1.2
+			@key,*[1, ] *= 1.875
 		}
 	}
 }
@@ -58,16 +58,16 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 			@ratio = 1
 		}
 		@PROPELLANT[IntakeAir]
 		{
-			@ratio = 2.17
+			@ratio = 16
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -79,7 +79,7 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 			@ratio = 1
 		}
 		@PROPELLANT[IntakeAir]
@@ -88,7 +88,7 @@
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -100,7 +100,7 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 			@ratio = 1
 		}
 		@PROPELLANT[IntakeAir]
@@ -109,7 +109,7 @@
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -123,7 +123,7 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 			@ratio = 1
 		}
 		@PROPELLANT[IntakeAir]
@@ -132,7 +132,7 @@
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 2.25
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -151,12 +151,12 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
-			@ratio = 1.5
+			@name = Propellium
+			@ratio = 3
 		}
 		@PROPELLANT[Oxidizer]
 		{
-			@ratio = 0.1
+			@ratio = 1
 		}
 		@PROPELLANT[ElectricCharge]
 		{
@@ -176,12 +176,12 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
-			@ratio = 1.5
+			@name = Propellium
+			@ratio = 3
 		}
 		@PROPELLANT[Oxidizer]
 		{
-			@ratio = 0.1
+			@ratio = 1
 		}
 		@PROPELLANT[ElectricCharge] // for ARI engine atmo mode, nerf it from 2.5
 		{
@@ -204,12 +204,12 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
-			@ratio = 1.5
+			@name = Propellium
+			@ratio = 3
 		}
 		@PROPELLANT[Oxidizer]
 		{
-			@ratio = 0.1
+			@ratio = 1
 		}
 		@PROPELLANT[ElectricCharge] // for ARI engine atmo mode, nerf it from 2.5
 		{
@@ -229,40 +229,40 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 		}
 		@atmosphereCurve
 		{
-			@key,1[1, ] *= 2
+			@key,*[1, ] *= 3.7
 		}
 		%atmChangeFlow = True
-		@atmCurve
-		{
-			!key,* = nope
-			key = 0.001 1
-			key = 0.1 0.15 0 0
-			key = 1 0.15 0 0
-			key = 15 0.45 0 0
-		}
 	}
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[Standard]]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
 
-// LP-R 02 "Irradiance"; No Isp buff
+// LP-R 02 "Irradiance"
 @PART[opt_vtol_lpr2]:NEEDS[CryoEngines|KerbalAtomics]
 {
 	@MODULE[ModuleEnginesFX]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
+			@name = Propellium
 			@ratio = 1
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 3.7
 		}
 	}
 }
@@ -278,12 +278,12 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
-			@ratio = 1.5
+			@name = Propellium
+			@ratio = 3
 		}
 		@PROPELLANT[Oxidizer]
 		{
-			@ratio = 0.1
+			@ratio = 1
 		}
 	}
 }
@@ -295,12 +295,12 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
-			@ratio = 1.5
+			@name = Propellium
+			@ratio = 3
 		}
 		@PROPELLANT[Oxidizer]
 		{
-			@ratio = 0.1
+			@ratio = 1
 		}
 		@PROPELLANT[ElectricCharge]
 		{
@@ -326,12 +326,12 @@
 	{
 		@PROPELLANT[LiquidFuel]
 		{
-			@name = LqdHydrogen
-			@ratio = 1.5
+			@name = Propellium
+			@ratio = 3
 		}
 		@PROPELLANT[Oxidizer]
 		{
-			@ratio = 0.1
+			@ratio = 1
 		}
 		@PROPELLANT[ElectricCharge]
 		{
@@ -339,7 +339,7 @@
 		}
 		@atmosphereCurve
 		{
-			@key,*[1, ] *= 1.2
+			@key,*[1, ] *= 1.5
 		}
 	}
 	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[DynoTune]]
@@ -355,12 +355,12 @@
 				{
 					@PROPELLANT[LiquidFuel]
 					{
-						@name = LqdHydrogen
-						@ratio = 1.5
+						@name = Propellium
+						@ratio = 3
 					}
 					@PROPELLANT[Oxidizer]
 					{
-						@ratio = 0.1
+						@ratio = 1
 					}
 					@PROPELLANT[ElectricCharge]
 					{
@@ -368,7 +368,7 @@
 					}
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 1.5
 					}
 				}
 			}
@@ -384,12 +384,12 @@
 				{
 					@PROPELLANT[LiquidFuel]
 					{
-						@name = LqdHydrogen
-						@ratio = 1.5
+						@name = Propellium
+						@ratio = 3
 					}
 					@PROPELLANT[Oxidizer]
 					{
-						@ratio = 0.1
+						@ratio = 1
 					}
 					@PROPELLANT[ElectricCharge]
 					{
@@ -397,7 +397,7 @@
 					}
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 1.5
 					}
 				}
 			}
@@ -413,12 +413,12 @@
 				{
 					@PROPELLANT[LiquidFuel]
 					{
-						@name = LqdHydrogen
-						@ratio = 1.5
+						@name = Propellium
+						@ratio = 3
 					}
 					@PROPELLANT[Oxidizer]
 					{
-						@ratio = 0.1
+						@ratio = 1
 					}
 					@PROPELLANT[ElectricCharge]
 					{
@@ -426,7 +426,7 @@
 					}
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 1.5
 					}
 				}
 			}
@@ -442,12 +442,12 @@
 				{
 					@PROPELLANT[LiquidFuel]
 					{
-						@name = LqdHydrogen
-						@ratio = 1.5
+						@name = Propellium
+						@ratio = 3
 					}
 					@PROPELLANT[Oxidizer]
 					{
-						@ratio = 0.1
+						@ratio = 1
 					}
 					@PROPELLANT[ElectricCharge]
 					{
@@ -455,7 +455,7 @@
 					}
 					@atmosphereCurve
 					{
-						@key,*[1, ] *= 1.2
+						@key,*[1, ] *= 1.5
 					}
 				}
 			}
