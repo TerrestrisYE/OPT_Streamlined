@@ -3,6 +3,21 @@ OPT Continued
 2.1.1
 
 * Fixed bulkheadprofile in Nebula engine. (Spotted by @ Lisias.)
+* Fixed K Drone Core's SAS module still missing.
+* Fixed missing bulkheadprofile in RCS ports.
+* Increased thrust in these engines:
+  * Valkyrie tilt & WarpJet MARGE.
+  * VTOL wrapper engines.
+* Moved the following in from OPT Legacy:
+  * 2.5m Nebula Shock Intake.
+  * VTOL Wrapper engines.
+  * Avatar tilt and WarpJet MARGE engine.
+  * DepthMask assets.
+  * K cockpits (custom, TAV). All 3 K cockpits are now here.
+  * K cabin and lab.
+  * K and KH Inline SAS.
+* Removed obolste parts: some RCS thrusters, some Avatar fuselage parts. Craft files that have these will break.
+* Updated DepthMask patch to detect standalone DepthMask plugin.
 
 
 2.1.0
