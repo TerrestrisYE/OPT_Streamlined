@@ -1,9 +1,11 @@
 OPT Legacy Spaceplane Parts
 
-2.2.0
+3.0
 
+* Added Localization support.
 * Added missing attach nodes to Avatar Inline SAS.
 * Added 2.5m "Tidal Force" power sphere. Produces 600 EC/s on LFO.
+  * Re-titled all power spheres.
 * Adjusted air-breathing performance of J-60D engine. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.
   * Adjusted J-60 stationary thrust to match.
 * Fixed broken heat limit key in Stail bicoupler. (Spotted by @ Lisias.)
