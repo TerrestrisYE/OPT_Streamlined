@@ -1,6 +1,15 @@
 OPT Reconfig
 
 
+2.3.0
+
+* Added heat limit upgrades for H noses. (Bundled with Mk2 nose upgrades.)
+* Fixes to IntakeAtm and CryoEngines patches.
+* Removed GPOSpeed fuel patch. Unknown if it suports Omnistorage.
+* Rewrote WBI integration and phased out Pathfinder legacy templates. It's all OmniConverters and OmniStorage. Always has been.
+* OPT in ClassicStock play mode uses "PropLox" fuel mix (Propellium + Oxidizer, equivalent to Hydrolox).
+
+
 2.2.0
 
 * Added KerbalChangelog support.
