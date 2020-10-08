@@ -1,6 +1,6 @@
-@PART[opt_powersphere1a]
+@PART[opt_powersphere1a|opt_powersphere1a2]
 {
-	@description ^= :$: <br><color="green">This part can change its fuel inputs.</color>	
+	@description ^= :$: <br><color="green">Fuel cell accepts different fuels.</color>	
 	MODULE
 	{
 		name = ModuleB9PartSwitch
@@ -15,7 +15,7 @@
 			primaryColor = ResourceColorLiquidFuel
 			secondaryColor = ResourceColorOxidizer
 			descriptionSummary = LiquidFuel + Oxidizer
-			descriptionDetail = <b>Inputs = </b> 0.045 LF/s + 0.055 OX/s <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			descriptionDetail = <b>Inputs:</b> 0.045 LF/s + 0.055 OX/s <br><b>Outputs:</b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
 			MODULE
 			{
 				IDENTIFIER
@@ -45,7 +45,7 @@
 			primaryColor = ResourceColorLiquidFuel
 			secondaryColor = ResourceColorLiquidFuel
 			descriptionSummary = LiquidFuel
-			descriptionDetail = <b>Inputs = </b> 0.1 LF/s <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			descriptionDetail = <b>Inputs:</b> 0.1 LF/s <br><b>Outputs:</b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
 			MODULE
 			{
 				IDENTIFIER
@@ -70,7 +70,7 @@
 			primaryColor = ResourceColorMonoPropellant
 			secondaryColor = ResourceColorMonoPropellant
 			descriptionSummary = MonoPropellant
-			descriptionDetail = <b>Inputs = </b> 0.15 Mono/s <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			descriptionDetail = <b>Inputs:</b> 0.15 Mono/s <br><b>Outputs:</b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
 			MODULE
 			{
 				IDENTIFIER
@@ -95,7 +95,7 @@
 			primaryColor = ResourceColorLqdHydrogen
 			secondaryColor = ResourceColorOxidizer
 			descriptionSummary = Propellium + Oxidizer
-			descriptionDetail = <b>Inputs = </b> 0.03 PLM/s (108 PLM/hr) + 0.01 OX/s (36 OX/hr) <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			descriptionDetail = <b>Inputs:</b> 0.03 PLM/s (108 PLM/hr) + 0.01 OX/s (36 OX/hr) <br><b>Outputs:</b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
 			MODULE
 			{
 				IDENTIFIER
@@ -125,7 +125,7 @@
 			primaryColor = ResourceColorLqdHydrogen
 			secondaryColor = ResourceColorLqdHydrogen
 			descriptionSummary = Propellium
-			descriptionDetail = <b>Inputs = </b> 0.06 PLM/s (216 PLM/hr) <br><b>Outputs = </b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			descriptionDetail = <b>Inputs:</b> 0.06 PLM/s (216 PLM/hr) <br><b>Outputs:</b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
 			MODULE
 			{
 				IDENTIFIER
@@ -139,6 +139,103 @@
 					{
 						ResourceName = Propellium
 						Ratio = 0.06
+					}
+				}
+			}
+		}
+	}
+}
+
+@PART[opt_powersphere1a2]
+{
+	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[FuelSelect]]
+	{
+		@SUBTYPE[LFO]
+		{
+			@descriptionDetail = <b>Inputs:</b> 0.18 LF/s + 0.22 OX/s <br><b>Outputs:</b> 600 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				@DATA
+				{
+					@INPUT_RESOURCE,*
+					{
+						@Ratio *= 4
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LF
+			title = LF
+			primaryColor = ResourceColorLiquidFuel
+			secondaryColor = ResourceColorLiquidFuel
+			descriptionSummary = LiquidFuel
+			descriptionDetail = <b>Inputs:</b> 0.4 LF/s <br><b>Outputs:</b> 600 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				@DATA
+				{
+					@INPUT_RESOURCE,*
+					{
+						@Ratio *= 4
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = MONO
+			title = Mono
+			primaryColor = ResourceColorMonoPropellant
+			secondaryColor = ResourceColorMonoPropellant
+			descriptionSummary = MonoPropellant
+			descriptionDetail = <b>Inputs:</b> 0.6 Mono/s <br><b>Outputs:</b> 600 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				@DATA
+				{
+					@INPUT_RESOURCE,*
+					{
+						@Ratio *= 4
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LH2O
+			title = PLOX
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor = ResourceColorOxidizer
+			descriptionSummary = Propellium + Oxidizer
+			descriptionDetail = <b>Inputs:</b> 0.12 PLM/s + 0.04 OX/s <br><b>Outputs:</b> 600 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				@DATA
+				{
+					@INPUT_RESOURCE,*
+					{
+						@Ratio *= 4
+					}
+				}
+			}
+		}
+		SUBTYPE
+		{
+			name = LH2
+			title = PLM
+			primaryColor = ResourceColorLqdHydrogen
+			secondaryColor = ResourceColorLqdHydrogen
+			descriptionSummary = Propellium
+			descriptionDetail = <b>Inputs:</b> 0.24 PLM/s <br><b>Outputs:</b> 150 EC/s<br><color="orange">Please quicksave + quickload after applying.</color>
+			MODULE
+			{
+				@DATA
+				{
+					@INPUT_RESOURCE,*
+					{
+						@Ratio *= 4
 					}
 				}
 			}
