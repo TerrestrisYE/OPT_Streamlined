@@ -5,6 +5,7 @@ OPT Reconfig
 
 * Added heat limit upgrades for H noses. (Bundled with Mk2 nose upgrades.)
 * Added Localization support.
+* Added Realism Overhaul support.
 * Fixes to IntakeAtm and CryoEngines patches.
 * Removed GPOSpeed fuel patch. Unknown if it suports Omnistorage.
 * Rewrote WBI integration and phased out Pathfinder legacy templates. It's all OmniConverters and OmniStorage. Always has been.

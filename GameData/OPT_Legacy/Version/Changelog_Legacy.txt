@@ -8,10 +8,12 @@ OPT Legacy Spaceplane Parts
   * Re-titled all power spheres.
 * Adjusted air-breathing performance of J-60D engine. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.
   * Adjusted J-60 stationary thrust to match.
+* Changed J-81 engine behavior to be as advanced NTR/NTJ.
 * Fixed broken heat limit key in Stail bicoupler. (Spotted by @ Lisias.)
 * Fixed cost (was way underpriced) in Bubble engine.
 * Fixed K Drone Core's SAS module still missing.
 * Increased thrust in these engines:
+  * J-81 engine.
   * Valkyrie tilt & WarpJet MARGE.
   * VTOL wrapper engines.
 * Moved the following to OPT Main:
