@@ -95,7 +95,7 @@
 	{
 		@PROPELLANT[IntakeAir]
 		{
-			@name = CompressedAtmosphere
+			@name = Atmosphere
 		}
 	}
 	@MODULE[ModuleRCSFX]
