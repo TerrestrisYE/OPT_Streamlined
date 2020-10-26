@@ -5,7 +5,7 @@
 // J-92 Nebula Shcramjet
 // J-60 ScreamJet
 // J-60D Hybrid ScreamJet
-@PART[opt_mk2_engine_short,J61,opt_nebula_engine,turboRamJetj_60|turboRamJetj_60d]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[opt_mk2_engine_short,J61,opt_nebula_engine,turboRamJetj_60|turboRamJetj_60d]// :NEEDS[something]
 {
 	@MODULE[ModuleEnginesFX],0
 	{
@@ -18,9 +18,28 @@
 		{
 			@ratio = 4
 		}
-		@PROPELLANT[ElectricCharge] // for J92 Shcramjet mode, nerf it from 73
+		@atmosphereCurve
 		{
-			@ratio = 4.81
+			@key,*[1, ] *= 3.7
+		}
+	}
+}
+@PART[opt_nebula_engine]// :NEEDS[something]
+{
+	@MODULE[ModuleEnginesFX],1
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 1
+		}
+		@PROPELLANT[IntakeAir]
+		{
+			@ratio = 4
+		}
+		@PROPELLANT[ElectricCharge]
+		{
+			@ratio = 4.977
 		}
 		@atmosphereCurve
 		{
@@ -29,33 +48,16 @@
 	}
 }
 
-// J-81 Nacelle
-@PART[j81turbojet]:NEEDS[CryoEngines|KerbalAtomics]
-{
-	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
-	{
-		@PROPELLANT[LiquidFuel]
-		{
-			@name = Propellium
-			@ratio = 1
-		}
-		@PROPELLANT[IntakeAir]
-		{
-			@ratio = 4
-		}
-		@atmosphereCurve
-		{
-			@key,*[1, ] *= 1.875
-		}
-	}
-}
 
 // Helicarrier
 // Valkyrie tilt
-@PART[opt_vtol_hc1|opt_vtol_jumpa1]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[opt_vtol_hc1|opt_vtol_jumpa1]// :NEEDS[something]
 {
 	@MODULE[ModuleEnginesFX],0
 	{
+		@minThrust = #$maxThrust$
+		@minThrust *= 0.4
+		%ignitions = 0
 		@PROPELLANT[LiquidFuel]
 		{
 			@name = Propellium
@@ -73,9 +75,9 @@
 }
 
 // Sky Light
-@PART[opt_vtol_heli1]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[opt_vtol_heli1]// :NEEDS[something]
 {
-	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
+	@MODULE[ModuleEnginesFX]:HAS[#engineID[FanLiquid]]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
@@ -94,9 +96,9 @@
 }
 
 // LP-J "Downswell"
-@PART[opt_vtol_lpj1]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[opt_vtol_lpj1]// :NEEDS[something]
 {
-	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
+	@MODULE[ModuleEnginesFX]:HAS[#engineID[FanLiquid]]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
@@ -117,7 +119,7 @@
 
 // Wrapper engines
 // Bubble
-@PART[opt_vtol_wrap?1|opt_vtol_bubble1]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[opt_vtol_wrap?1|opt_vtol_bubble1]// :NEEDS[something]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
 	{
@@ -142,10 +144,9 @@
 // Wrappers
 // Valkyrie tilt
 // Helicarrier
-// LP-R 01 "Prominence"
 // J Linear Aerospike
 // Stail Linear Aerospike
-@PART[opt_vtol_wrap?1|opt_vtol_jump?1|opt_vtol_hc1|opt_vtol_lpr1|j_linear_aerospike,b_linear_aerospike]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[opt_vtol_wrap?1|opt_vtol_jump?1|opt_vtol_hc1|j_linear_aerospike|b_linear_aerospike]// :NEEDS[something]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
 	{
@@ -160,7 +161,7 @@
 		}
 		@PROPELLANT[ElectricCharge]
 		{
-			@ratio = 0.91
+			@ratio = 9.093
 		}
 		@atmosphereCurve
 		{
@@ -170,7 +171,8 @@
 }
 
 // ARI-75 LFO Engine
-@PART[AAengine]:NEEDS[CryoEngines|KerbalAtomics]
+// LP-R 01 "Prominence"
+@PART[AAengine|opt_vtol_lpr1]// :NEEDS[something]
 {
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[Air-augmented]]
 	{
@@ -183,9 +185,9 @@
 		{
 			@ratio = 1
 		}
-		@PROPELLANT[ElectricCharge] // for ARI engine atmo mode, nerf it from 2.5
+		@PROPELLANT[ElectricCharge]
 		{
-			@ratio = 1
+			@ratio = 4.546
 		}
 		@atmosphereCurve
 		{
@@ -200,7 +202,7 @@
 			key = 15 0.8 0 0
 		}
 	}
-	@MODULE[ModuleEnginesFX]:HAS[#engineID[Standard]]
+	@MODULE[ModuleEnginesFX]:HAS[~engineID[Air-augmented]]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
@@ -211,9 +213,9 @@
 		{
 			@ratio = 1
 		}
-		@PROPELLANT[ElectricCharge] // for ARI engine atmo mode, nerf it from 2.5
+		@PROPELLANT[ElectricCharge]
 		{
-			@ratio = 1
+			@ratio = 4.546
 		}
 		@atmosphereCurve
 		{
@@ -222,8 +224,10 @@
 	}
 }
 
+
 // ARI-73 LF Engine
-@PART[arie73]:NEEDS[CryoEngines|KerbalAtomics]
+// LP-R 02 "Irradiance"
+@PART[arie73|opt_vtol_lpr2]:NEEDS[CryoEngines|KerbalAtomics]
 {
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[Air-augmented]]
 	{
@@ -237,7 +241,7 @@
 		}
 		%atmChangeFlow = True
 	}
-	@MODULE[ModuleEnginesFX]:HAS[#engineID[Standard]]
+	@MODULE[ModuleEnginesFX]:HAS[~engineID[Air-augmented]]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
@@ -249,30 +253,10 @@
 		}
 	}
 }
-
-// LP-R 02 "Irradiance"
-@PART[opt_vtol_lpr2]:NEEDS[CryoEngines|KerbalAtomics]
-{
-	@MODULE[ModuleEnginesFX]
-	{
-		@PROPELLANT[LiquidFuel]
-		{
-			@name = Propellium
-			@ratio = 1
-		}
-		@atmosphereCurve
-		{
-			@key,*[1, ] *= 3.7
-		}
-	}
-}
-
-// ## No Isp buff
 
 // Dark Drive
 // J-60D Hybrid ScreamJet
-// Bubble
-@PART[engine_darkDrive|turboRamJetj_60d|opt_vtol_bubble1]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[engine_darkDrive|turboRamJetj_60d]// :NEEDS[something]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
 	{
@@ -285,13 +269,21 @@
 		{
 			@ratio = 1
 		}
+		@PROPELLANT[ElectricCharge] // For J-60D
+		{
+			@ratio = 4.546
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 1.5
+		}
 	}
 }
 
-// J-81 Nacelle; No Isp buff
-@PART[j81turbojet]:NEEDS[CryoEngines|KerbalAtomics]
+// Bubble
+@PART[opt_vtol_bubble1]// :NEEDS[something]
 {
-	@MODULE[ModuleEnginesFX],1
+	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
 	{
 		@PROPELLANT[LiquidFuel]
 		{
@@ -304,7 +296,28 @@
 		}
 		@PROPELLANT[ElectricCharge]
 		{
-			@ratio = 8.75
+			@ratio = 207.276
+		}
+		@atmosphereCurve
+		{
+			@key,*[1, ] *= 1.5
+		}
+	}
+}
+
+// J-81 Nacelle; No Isp buff
+@PART[j81turbojet]// :NEEDS[something]
+{
+	@MODULE[ModuleEnginesFX],1
+	{
+		@PROPELLANT[LiquidFuel]
+		{
+			@name = Propellium
+			@ratio = 1
+		}
+		@PROPELLANT[ElectricCharge]
+		{
+			@ratio = 2.3144
 		}
 	}
 }
@@ -312,16 +325,16 @@
 // # Special
 
 // EggDog
-@PART[opt_vtol_egg|opt_egg]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[opt_vtol_egg|opt_egg]// :NEEDS[something]
 {
-	@VIspVac3K *= 1.2
-	@VIspASL3K *= 1.2
-	@VIspVac4K *= 1.2
-	@VIspASL4K *= 1.2
-	@VIspVac5K *= 1.2
-	@VIspASL5K *= 1.2
-	@VIspVac6K *= 1.2
-	@VIspASL6K *= 1.2
+	@VIspVac3K *= 1.5
+	@VIspASL3K *= 1.5
+	@VIspVac4K *= 1.5
+	@VIspASL4K *= 1.5
+	@VIspVac5K *= 1.5
+	@VIspASL5K *= 1.5
+	@VIspVac6K *= 1.5
+	@VIspASL6K *= 1.5
 	@MODULE[ModuleEnginesFX]
 	{
 		@PROPELLANT[LiquidFuel]
@@ -335,7 +348,7 @@
 		}
 		@PROPELLANT[ElectricCharge]
 		{
-			@ratio *= 0.1455
+			@ratio = 6.183
 		}
 		@atmosphereCurve
 		{
@@ -346,9 +359,9 @@
 	{
 		@SUBTYPE[450]
 		{
-			@title = 540
-			@descriptionSummary = 540 Vac Isp (Default)
-			@descriptionDetail = #<b>maxThrust:</b> $/VIspThrustASL3K$ / $/VIspThrustVac3K$kN Vac.<br><b>Isp:</b> $/VIspASL3K$ / $/VIspVac3K$s.<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$ EC/s</color> at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			@title = 675
+			@descriptionSummary = 675 Vac Isp (Default)
+			@descriptionDetail = #<b>Thrust:</b> $/VIspThrustASL3K$ / $/VIspThrustVac3K$ kN.<br><b>Isp:</b> $/VIspASL3K$ / $/VIspVac3K$s.<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$</color> EC/s at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
 			@MODULE
 			{
 				@DATA
@@ -364,7 +377,7 @@
 					}
 					@PROPELLANT[ElectricCharge]
 					{
-						@ratio *= 0.1456
+						@ratio = 6.183
 					}
 					@atmosphereCurve
 					{
@@ -375,9 +388,9 @@
 		}
 		@SUBTYPE[600]
 		{
-			@title = 720
-			@descriptionSummary = 720s Vac Isp
-			@descriptionDetail = #<b>maxThrust:</b> <color="yellow">$/VIspThrustASL4K$ / $/VIspThrustVac4K$</color>kN Vac.<br><b>Isp:</b> <color="yellow">$/VIspASL4K$ / $/VIspVac4K$s</color>s<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$ EC/s</color> at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			@title = 900
+			@descriptionSummary = 900s Vac Isp
+			@descriptionDetail = #<b>Thrust:</b> <color="yellow">$/VIspThrustASL4K$ / $/VIspThrustVac4K$</color> kN.<br><b>Isp:</b> <color="yellow">$/VIspASL4K$ / $/VIspVac4K$</color>s.<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$</color> EC/s at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
 			@MODULE
 			{
 				@DATA
@@ -393,7 +406,7 @@
 					}
 					@PROPELLANT[ElectricCharge]
 					{
-						@ratio *= 0.1456
+						@ratio = 6.183
 					}
 					@atmosphereCurve
 					{
@@ -404,9 +417,9 @@
 		}
 		@SUBTYPE[750]
 		{
-			@title = 900
-			@descriptionSummary = 900s Vac Isp
-			@descriptionDetail = #<b>maxThrust:</b> <color="yellow">$/VIspThrustASL5K$ / $/VIspThrustVac5K$</color>kN Vac.<br><b>Isp:</b> <color="yellow">$/VIspASL5K$ / $/VIspVac5K$s</color>s<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$ EC/s</color> at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			@title = 1125
+			@descriptionSummary = 1125s Vac Isp
+			@descriptionDetail = #<b>Thrust:</b> <color="yellow">$/VIspThrustASL5K$ / $/VIspThrustVac5K$</color> kN.<br><b>Isp:</b> <color="yellow">$/VIspASL5K$ / $/VIspVac5K$</color>s.<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$</color> EC/s at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
 			@MODULE
 			{
 				@DATA
@@ -422,7 +435,7 @@
 					}
 					@PROPELLANT[ElectricCharge]
 					{
-						@ratio *= 0.1456
+						@ratio = 6.183
 					}
 					@atmosphereCurve
 					{
@@ -433,9 +446,9 @@
 		}
 		@SUBTYPE[900]
 		{
-			@title = 1080
-			@descriptionSummary = 1080s Vac Isp
-			@descriptionDetail = #<b>maxThrust:</b> <color="yellow">$/VIspThrustASL6K$ / $/VIspThrustVac6K$</color>kN Vac.<br><b>Isp:</b> <color="yellow">$/VIspASL6K$ / $/VIspVac6K$s</color>s<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$ EC/s</color> at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
+			@title = 1350
+			@descriptionSummary = 1350s Vac Isp
+			@descriptionDetail = #<b>Thrust:</b> <color="yellow">$/VIspThrustASL6K$ / $/VIspThrustVac6K$</color> kN.<br><b>Isp:</b> <color="yellow">$/VIspASL6K$ / $/VIspVac6K$</color>s.<br><b>Requires:</b> <color="yellow">$/VIspChargeReq$</color> EC/s at full throttle.<br><color="orange">When in flight, shutdown engine before switching.</color>
 			@MODULE
 			{
 				@DATA
@@ -451,7 +464,7 @@
 					}
 					@PROPELLANT[ElectricCharge]
 					{
-						@ratio *= 0.1456
+						@ratio = 6.183
 					}
 					@atmosphereCurve
 					{

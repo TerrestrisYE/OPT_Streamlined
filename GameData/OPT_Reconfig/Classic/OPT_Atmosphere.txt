@@ -50,8 +50,74 @@
 	}
 }
 
+// J-81 Nacelle
+@PART[j81turbojet]
+{
+	+MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
+	{
+		@resourceName = Atmosphere
+		%checkForOxygen = false
+	}
+	+RESOURCE[IntakeAir]
+	{
+		@name = Atmosphere
+	}
+	@MODULE[ModuleEnginesFX],0
+	{
+		@PROPELLANT[IntakeAir]
+		{
+			@name = Atmosphere
+		}
+	}
+	@MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
+	{
+		@checkForOxygen = True
+	}
+}
+
+// Rudder
+@PART[opt_vtol_rudder1]
+{
+	+MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
+	{
+		@resourceName = Atmosphere
+		%checkForOxygen = false
+	}
+	+RESOURCE[IntakeAir]
+	{
+		@name = Atmosphere
+	}
+	+RESOURCE[IntakeAir]
+	{
+		@name = CompressedAtmosphere
+	}
+	@MODULE[ModuleEnginesFX]
+	{
+		@PROPELLANT[IntakeAir]
+		{
+			@name = CompressedAtmosphere
+		}
+	}
+	@MODULE[ModuleRCSFX]
+	{
+		@resourceName = CompressedAtmosphere
+	}
+	MODULE
+	{
+		name = ModuleAlternator
+		engineName = WJOpen
+		outputName = Compressor (Open)
+		outputUnits = CAtm/s
+		RESOURCE
+		{
+			name = CompressedAtmosphere
+			rate = 2
+		}
+	}
+}
+
 // WarpJet engines
-@PART[opt_sage|opt_vtol_wrap?2|opt_vtol_jump?2]:AFTER[OPT_Legacy]
+@PART[opt_sage|opt_vtol_wrap?2|opt_vtol_jump?2]
 {
 	+MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
 	{

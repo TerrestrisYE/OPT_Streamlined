@@ -9,6 +9,7 @@ OPT Legacy Spaceplane Parts
 * Adjusted air-breathing performance of J-60D engine. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.
   * Adjusted J-60 stationary thrust to match.
 * Changed J-81 engine behavior to be as advanced NTR/NTJ.
+* Decreased RCS thrust in Rudder engine.
 * Fixed broken heat limit key in Stail bicoupler. (Spotted by @ Lisias.)
 * Fixed cost (was way underpriced) in Bubble engine.
 * Fixed K Drone Core's SAS module still missing.
