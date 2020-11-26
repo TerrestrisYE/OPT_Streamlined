@@ -29,19 +29,19 @@ These engines also fall into some groups (by demand or by a characteristic) as d
 
 :small_blue_diamond: **J-92 Nebula Shcramjet**. :two: :muscle: :zap: The 2.5m jet engine that everyone knows. Before OPT Reconfig, it was just an alternative shape but same performance to the HAE-02. But since Reconfig, it's a super-advanced all-range jet engine. As a "hybrid plasma scramjet" it remains super-efficient unlike any other scramjet but at the cost of a large amount of EC/s. Change over from its normal turbojet mode at Mach 5. The shcramjet mode fails under Mach 4. With its super efficiency and no speed limit, the Nebula uniquely allows for SSTO spaceplanes to skip carrying Oxidizer entirely, and rely on nuke engines alone for orbital insertion.
 
-:small_blue_diamond: **J-81 Nacelle**. :three: :zap: :zap: :alien: The oddly shaped super-advanced engine. It's borderline hyper-efficient but at the costs of: Its air-breathing mode works well near Kerbin sea level, only in Oxygen, and under Mach 3. If you can develop a flight profile within this precise condition, you can use a massive early boost to air-breathing ascent and then you can coast to Apoapsis on its super-high rocket mode Isp with less worry of its low thrust.
+:small_blue_diamond: **J-81 Nacelle**. :one: :alien: :zap: :zap: The oddly shaped super-advanced engine. It's borderline hyper-efficient but at the costs of: Its air-breathing mode works well near Kerbin sea level, only in Oxygen, and under Mach 3. If you can develop a flight profile within this precise condition, you can use a massive early boost to air-breathing ascent and then you can coast to Apoapsis on its super-high rocket mode Isp with less worry of its low thrust.
 
-:small_blue_diamond: **Dark Drive**. :three: :muscle: :muscle: :muscle: :alien: The 3.75m black hole engine. Everyone knows it. Many fear and/or rage at it. It's OPT's ultimate engine, borderline interstellar class. Use it for motherships and megaships that want to be able to land anywhere. Build your ship right and you can SSTO on Eve and Tylo, and you can casually dive through gas giants. But be sure to have an OPT science lab and an Ore supply. The Dark Goo inside slowly boils away to keep your probe cores alive.
+:small_blue_diamond: **Dark Drive**. :three: :alien: :muscle: :muscle: :muscle: The 3.75m black hole engine. Everyone knows it. Many fear and/or rage at it. It's OPT's ultimate engine, borderline interstellar class. Use it for motherships and megaships that want to be able to land anywhere. Build your ship right and you can SSTO on Eve and Tylo, and you can casually dive through gas giants. But be sure to have an OPT science lab and an Ore supply. The Dark Goo inside slowly boils away to keep your probe cores alive.
 
 ## VTOL engines suite
 
 :small_blue_diamond: **Bubble**. :one: :cancer: :zap: :alien: The 2.5m spherical engine is also borderline interstellar. Hyper efficient and more appealing than the J-81. It is entirely a companion to the Dark Drive. Use it for SSTO shuttles that accompany your megaship. Its air-breathing mode can further split between using IntakeAir (Oxygen) and Oxidizer (when no Oxygen) so it's usable in any atmosphere.
 
-:small_blue_diamond: **Helicarrier**. :one: :muscle: :cancer: :zap: The 3.75m heavy-lift disc engine. It is not hyper-efficient but is extremely versatile and is purposed for use by heavy and super-efficient craft that are both horizontal and vertical.
+:small_blue_diamond: **Helicarrier**. :one: :cancer: :muscle: :zap: The 3.75m heavy-lift disc engine. It is not hyper-efficient but is extremely versatile and is purposed for use by heavy and super-efficient craft that are both horizontal and vertical.
 
 :small_blue_diamond: **LP-J 01 "Downswell"**. :cancer: :zap: Low-profile, highly versatile air-breathing engine. It is more of a vent than a true engine so it uniquely allows for its throttle response to be changed to match other air-breathing engines.
 
-:small_blue_diamond: **LP-R 01 "Prominence"**. :three: Low-profile version of the ARI-75. It lacks the air-augmented mode.
+:small_blue_diamond: **LP-R 01 "Prominence"**. :three: :zap: Low-profile version of the ARI-75. It lacks the air-augmented mode.
 
 :small_blue_diamond: **LP-R 02 "Irradiance"**. :three: :radioactive: Low-profile version of the ARI-73. It lacks the air-augmented mode.
 
@@ -49,8 +49,8 @@ These engines also fall into some groups (by demand or by a characteristic) as d
 
 :small_blue_diamond: **Slipstream**. :zap: Not an engine in the true sense. This is as the tail rotor for helicopters but in-game is a lift surface and powerful, omni-directional air-breathing RCS thruster. While engaged it will always sip on EC to maintain its internal pressurized air supply for thrust.
 
-:small_blue_diamond: **Valkyrie**. :one: :muscle: :zap: The heavy lift cuboid tilt-engine. It is nearly what many players would ask for. It's powerful, efficient, tilt capable, and it can change between air-breathing and rocket mode. And its air-breathing mode can change between using IntakeAir and Oxidizer. But its air-breathing speed limit is roughly Mach 2.5.
-* :small_blue_diamond: **Warpjet MARGE**. :muscle: :zap: :zap: This is like the Valkyrie but (as all Warpjets) feeds on EC and IntakeAtm and has no operating speed limit.
+:small_blue_diamond: **Valkyrie**. :one: :cancer: :muscle: :zap: The heavy lift cuboid tilt-engine. It is nearly what many players would ask for. It's powerful, efficient, tilt capable, and it can change between air-breathing and rocket mode. And its air-breathing mode can change between using IntakeAir and Oxidizer. But its air-breathing speed limit is roughly Mach 2.5.
+* :small_blue_diamond: **Warpjet MARGE**. :four: :muscle: :zap: :zap: This is like the Valkyrie but (as all Warpjets) feeds on EC and IntakeAtm and has no operating speed limit.
 
 :small_blue_diamond: **Warpjet SAGE**. :four: :zap: :zap: This is like the J-61 Turboramjet but is optimized for use in thin atmosphere. It has a closed cycle but depends on your ship having an abundant supply of IntakeAtm. Some OPT parts allow you to tank IntakeAtm (the Mk2 nose and the drop tanks). Use it well and you can SSTO on literally just air (and lots of EC). This is the purpose of all Warpjets.
 
@@ -58,5 +58,5 @@ These engines also fall into some groups (by demand or by a characteristic) as d
 
 :small_blue_diamond: **Egg Dog**. :three: :muscle: :muscle: :muscle: :zap: This is a heavy lifter hybrid plasma LFO engine. Its power compares to the stock Vector/SSME but is still super-efficient (costing EC/s). It is available as both a radial tilt VTOL engine and a stack engine.
 
-:small_blue_diamond: **Wrapper J, K, L (VTOL)**. :muscle: :zap: These engines clip onto and through the sides of the J, K and Humpback bodies for adjustable, form-fitting "inline" vertical engines.
-* :small_blue_diamond: **Warpjet Wrapper J, K, L (VTOL)**. :muscle: :zap: :zap: These engines clip onto and through the sides of the J, K and Humpback bodies for adjustable, form-fitting "inline" vertical engines.
+:small_blue_diamond: **Wrapper J, K, L (VTOL)**. :one: :cancer: :muscle: :zap: These engines clip onto and through the sides of the J, K and Humpback bodies for adjustable, form-fitting "inline" vertical engines.
+* :small_blue_diamond: **__Warpjet__ Wrapper J, K, L (VTOL)**. :four: :muscle: :zap: :zap: These engines clip onto and through the sides of the J, K and Humpback bodies for adjustable, form-fitting "inline" vertical engines.
