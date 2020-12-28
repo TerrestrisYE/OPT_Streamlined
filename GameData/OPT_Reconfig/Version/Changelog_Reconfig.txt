@@ -7,7 +7,7 @@ OPT Reconfig
 * Added Localization support.
 * Added Realism Overhaul support.
 * Fixes to IntakeAtm and CryoEngines patches.
-* Removed GPOSpeed fuel patch. Unknown if it suports Omnistorage.
+* Removed GPOSpeed fuel patch. Unknown if it supports WBI Omnistorage.
 * Rewrote WBI integration and phased out Pathfinder legacy templates. It's all OmniConverters and OmniStorage. Always has been.
 * OPT in ClassicStock play mode uses "PropLox" fuel mix (Propellium + Oxidizer, equivalent to Hydrolox).
 
