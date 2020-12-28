@@ -4,6 +4,7 @@ OPT Reconfig
 3.0
 
 * Added heat limit upgrades for H noses. (Bundled with Mk2 nose upgrades.)
+* Added KSP 1.11 stock inventory to crewed parts.
 * Added Localization support.
 * Added Realism Overhaul support.
 * Fixes to IntakeAtm and CryoEngines patches.
