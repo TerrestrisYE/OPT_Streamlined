@@ -1,13 +1,21 @@
 // Config not tested. Use at own risk.
+// WIP config for engines. Values may be very off or missing (which will cause nulls). Use at own risk.
+// SystemHeat does not agree with Tweakscale. Complaints where these two mods are installed together will hence be ignored.
 
-// Configuring radiators is not too hard. You need to figure out surface area and temperature. You should pick surface area by looking at your radiator and seeing how large it is (compare it one of the SH ones, and scale from there). Then you pick maximum temperature, which is determined by the type of radiator you are using. 
+
+
+// Configuring radiators is not too hard. You need to figure out surface area and temperature. You should pick surface area by looking at your radiator and seeing how large it is (compare it one of the SystemHeat ones, and scale from there). Then you pick maximum temperature, which is determined by the type of radiator you are using. 
 
 // * 350K: basic ammonia loop (life support) radiators like on the ISS
 // * 1000K: The 'high temperature' radiators in Heat Control, which are based more or less on high temp radiators we could feasibly build today.
 // * 1300K: The 'microchannel' higher tech carbon filament tube radiators that can handle more heat
 
 
-// Fuselages
+
+// - - - - Fuselages - - - -
+
+
+
 @PART[j_deploymentBay]:NEEDS[SystemHeat]
 {
 	MODULE
@@ -245,7 +253,12 @@
 	}
 }
 
-// Engines 
+
+
+// - - - - Engines - - - -
+
+
+
 @PART[opt_nebula_engine]:NEEDS[SystemHeat]
 {
 	MODULE
@@ -555,7 +568,12 @@
 	}
 }
 
-// Power Spheres (Tidal Force)
+
+
+// - - - - Power Spheres (Tidal Force) - - - -
+
+
+
 @PART[opt_powersphere1a]:NEEDS[SystemHeat]
 {
 	!MODULE[ModuleCoreHeat] {}
@@ -691,7 +709,12 @@
 	}
 }
 
-// Power Spheres (Dark Energy)
+
+
+// - - - - Power Spheres (Dark Energy) - - - -
+
+
+
 @PART[opt_powersphere1b]:NEEDS[SystemHeat]
 {
 	!MODULE[ModuleCoreHeat] {}
