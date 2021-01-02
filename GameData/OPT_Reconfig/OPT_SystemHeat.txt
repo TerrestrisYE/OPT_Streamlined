@@ -6,9 +6,9 @@
 
 // Configuring radiators is not too hard. You need to figure out surface area and temperature. You should pick surface area by looking at your radiator and seeing how large it is (compare it one of the SystemHeat ones, and scale from there). Then you pick maximum temperature, which is determined by the type of radiator you are using. 
 
-// * 350K: basic ammonia loop (life support) radiators like on the ISS
+// * 350K: basic ammonia loop (life support) radiators like on the ISS.
 // * 1000K: The 'high temperature' radiators in Heat Control, which are based more or less on high temp radiators we could feasibly build today.
-// * 1300K: The 'microchannel' higher tech carbon filament tube radiators that can handle more heat
+// * 1300K: The 'microchannel' higher tech carbon filament tube radiators that can handle more heat.
 
 
 
@@ -73,6 +73,30 @@
 		{
 			key = 0 0
 			key = 350 60
+		}
+	}
+}
+@PART[b_docking_port1]
+{
+	MODULE
+	{
+		name = ModuleSystemHeat
+		volume = 0.05
+		moduleID = default
+		iconName = Icon_Radiator
+	}
+	@MODULE[ModuleActiveRadiator]
+	{
+		@name = ModuleSystemHeatRadiator
+		moduleID = radiator
+		systemHeatModuleID = default
+		usePhysicalTemperatureModeling = false
+		maxRadiatorTemperature = 350 
+		emissivity = 0.9
+		temperatureCurve
+		{
+			key = 0 0
+			key = 350 40
 		}
 	}
 }
