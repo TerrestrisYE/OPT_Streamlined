@@ -6,8 +6,10 @@ OPT Legacy Spaceplane Parts
 * Added missing attach nodes to Avatar Inline SAS.
 * Added 2.5m "Tidal Force" power sphere. Produces 600 EC/s on LFO.
   * Re-titled all power spheres.
-* Adjusted air-breathing performance of J-60D engine. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.
-  * Adjusted J-60 stationary thrust to match.
+* Adjusted air-breathing performance of these engines:
+  * J-60D. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.
+  * J-60 stationary thrust to match J-60D.
+  * J60, J-61: Added scramjet upper speed limit (Mach 15). Shcramjets don't have this so the Nebula doesn't get it.
 * Changed J-81 engine behavior to be as advanced NTR/NTJ.
 * Decreased RCS thrust in Rudder engine.
 * Fixed broken heat limit key in Stail bicoupler. (Spotted by @ Lisias.)
@@ -36,6 +38,7 @@ OPT Legacy Spaceplane Parts
 * Removed obsolete keys from some air-breathing engines.
 * Removed extra lift module from K lab.
 * Updated DepthMask patch to detect standalone DepthMask plugin.
+* Updated offset between inner and outer stack nodes of Avatar and Humpback bays to make it less likely to attach them the wrong way and break cargo shielding.
 
 
 2.1.1
