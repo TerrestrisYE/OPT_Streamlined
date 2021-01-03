@@ -2,18 +2,20 @@ OPT Legacy Spaceplane Parts
 
 3.0
 
+* Added KerbalChangelog support.
 * Added Localization support.
 * Added missing attach nodes to Avatar Inline SAS.
+* Added missing SAS module to all drone cores.
 * Added 2.5m "Tidal Force" power sphere. Produces 600 EC/s on LFO.
   * Re-titled all power spheres.
 * Adjusted air-breathing performance of these engines:
   * J-60D. It was really lacking the high altitude runaway thrust behavior. I officially have a love/hate relationship with this engine.
   * J-60 stationary thrust to match J-60D.
   * J60, J-61: Added scramjet upper speed limit (Mach 15). Shcramjets don't have this so the Nebula doesn't get it.
-* Changed J-81 engine behavior to be as advanced NTR/NTJ.
+* Changed J-81 title and engine behavior to reflect new fusion ramjet/rocket behavior.
 * Decreased RCS thrust in Rudder engine.
 * Fixed broken heat limit key in Stail bicoupler. (Spotted by @ Lisias.)
-* Fixed cost (was way underpriced) in Bubble engine.
+* Fixed cost (was way underpriced) in Bubble engine and Stail cockpits.
 * Fixed K Drone Core's SAS module still missing.
 * Increased thrust in these engines:
   * J-81 engine.
