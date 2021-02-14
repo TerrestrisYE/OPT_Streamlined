@@ -1,102 +1,4 @@
-FUSIONMIX:NEEDS[Pathfinder]
-{
-	templateTags = opt
-	TechRequired = experimentalElectrics
-	%TechRequired:NEEDS[CommunityTechTree] = fusionPower
-	description = Produce power from FusionPellets.
-	ConverterName = FusionPellets
-	StartActionName = Start FusionPellets
-	StopActionName = Stop FusionPellets
-	AutoShutdown = false
-	UseSpecialistBonus = false
-	EfficiencyBonus = 1
-	INPUT_RESOURCE
-	{
-		ResourceName = FusionPellets
-		Ratio = 0.000315
-		FlowMode = ALL_VESSEL
-	}
-	OUTPUT_RESOURCE
-	{
-		ResourceName = ElectricCharge
-		Ratio = 300
-		FlowMode = ALL_VESSEL
-	}
-	OUTPUT_RESOURCE
-	{
-		ResourceName = ElectroPlasma
-		Ratio = 300
-		FlowMode = ALL_VESSEL
-		DumpExcess = True
-	}
-}
-
-FUSIONMIX:NEEDS[Pathfinder]
-{
-	templateTags = opt
-	TechRequired = experimentalElectrics
-	%TechRequired:NEEDS[CommunityTechTree] = fusionPower
-	description = Produce power from PreciousMetals.
-	ConverterName = PreciousMetals
-	StartActionName = Start PreciousMetals
-	StopActionName = Stop PreciousMetals
-	AutoShutdown = false
-	UseSpecialistBonus = false
-	EfficiencyBonus = 1
-	INPUT_RESOURCE
-	{
-		ResourceName = PreciousMetals
-		Ratio = 0.000005
-		FlowMode = ALL_VESSEL
-	}
-	OUTPUT_RESOURCE
-	{
-		ResourceName = ElectricCharge
-		Ratio = 300
-		FlowMode = ALL_VESSEL
-	}
-	OUTPUT_RESOURCE
-	{
-		ResourceName = ElectroPlasma
-		Ratio = 300
-		FlowMode = ALL_VESSEL
-		DumpExcess = True
-	}
-}
-
-FUSIONMIX:NEEDS[Pathfinder]
-{
-	templateTags = opt
-	TechRequired = experimentalElectrics
-	%TechRequired:NEEDS[CommunityTechTree] = fusionPower
-	description = Produce power from Hexagen.
-	ConverterName = Hexagen
-	StartActionName = Start Hexagen
-	StopActionName = Stop Hexagen
-	AutoShutdown = false
-	UseSpecialistBonus = false
-	EfficiencyBonus = 1
-	INPUT_RESOURCE
-	{
-		ResourceName = Hexagen
-		Ratio = 0.000315
-		FlowMode = ALL_VESSEL
-	}
-	OUTPUT_RESOURCE
-	{
-		ResourceName = ElectricCharge
-		Ratio = 300
-		FlowMode = ALL_VESSEL
-	}
-	OUTPUT_RESOURCE
-	{
-		ResourceName = ElectroPlasma
-		Ratio = 300
-		FlowMode = ALL_VESSEL
-		DumpExcess = True
-	}
-}
-FUSIONMIX:NEEDS[Pathfinder]
+FUSIONMIX:NEEDS[Pathfinder,ClassicStock]
 {
 	templateTags = opt
 	TechRequired = experimentalElectrics
@@ -112,6 +14,44 @@ FUSIONMIX:NEEDS[Pathfinder]
 	{
 		ResourceName = Propellium
 		Ratio = 0.00445
+		FlowMode = ALL_VESSEL
+	}
+	OUTPUT_RESOURCE
+	{
+		ResourceName = ElectricCharge
+		Ratio = 300
+		FlowMode = ALL_VESSEL
+	}
+	OUTPUT_RESOURCE
+	{
+		ResourceName = ElectroPlasma
+		Ratio = 300
+		FlowMode = ALL_VESSEL
+		DumpExcess = True
+	}
+}
+FUSIONMIX:NEEDS[Pathfinder,ClassicStock]
+{
+	templateTags = opt
+	TechRequired = experimentalElectrics
+	%TechRequired:NEEDS[CommunityTechTree] = fusionPower
+	description = Produce power from Propellium + Hexagen.
+	ConverterName = PLM-HEX
+	StartActionName = Start PLM-HEX
+	StopActionName = Stop PLM-HEX
+	AutoShutdown = false
+	UseSpecialistBonus = false
+	EfficiencyBonus = 1
+	INPUT_RESOURCE
+	{
+		ResourceName = Propellium
+		Ratio = 0.00445
+		FlowMode = ALL_VESSEL
+	}
+	INPUT_RESOURCE
+	{
+		ResourceName = Hexagen
+		Ratio = 0.002225
 		FlowMode = ALL_VESSEL
 	}
 	OUTPUT_RESOURCE
