@@ -1,4 +1,4 @@
-@PART[opt_powersphere1a|opt_powersphere1a2]
+@PART[opt_powersphere1a|opt_powersphere1a2]:NEEDS[B9PartSwitch,ClassicStock]
 {
 	@description ^= :$: <br><color="green">Fuel cell accepts different fuels.</color>	
 	MODULE
@@ -201,7 +201,7 @@
 	}
 }
 
-@PART[opt_powersphere1a2]
+@PART[opt_powersphere1a2]:NEEDS[B9PartSwitch,ClassicStock]
 {
 	@MODULE[ModuleB9PartSwitch]:HAS[#moduleID[FuelSelect]]
 	{

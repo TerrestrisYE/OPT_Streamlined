@@ -1,5 +1,5 @@
 // Cockpit intakes
-@PART[b_cockpit_qs,j_cockpit_qs,j_6m_cockpit]:FOR[OPT_Reconfig]
+@PART[b_cockpit_qs,j_cockpit_qs,j_6m_cockpit]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]
 	{
@@ -11,7 +11,7 @@
 		@name = Atmosphere
 	}
 }
-@PART[k_10m_cockpit,k_10m_cockpit_legacy,k_10m_cockpit_custom]:FOR[OPT_Reconfig]
+@PART[k_10m_cockpit,k_10m_cockpit_legacy,k_10m_cockpit_custom]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]
 	{
@@ -23,7 +23,7 @@
 		@name = Atmosphere
 	}
 }
-@PART[l_8m_cockpit]:FOR[OPT_Reconfig]
+@PART[l_8m_cockpit]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]
 	{
@@ -37,7 +37,7 @@
 }
 
 //Stack intakes
-@PART[mk2_ramIntake|opt_s2intake]
+@PART[mk2_ramIntake|opt_s2intake]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
 	{
@@ -51,7 +51,7 @@
 }
 
 // J-81 Nacelle
-@PART[j81turbojet]
+@PART[j81turbojet]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
 	{
@@ -76,7 +76,7 @@
 }
 
 // Rudder
-@PART[opt_vtol_rudder1]
+@PART[opt_vtol_rudder1]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
 	{
@@ -117,7 +117,7 @@
 }
 
 // WarpJet engines
-@PART[opt_sage|opt_vtol_wrap?2|opt_vtol_jump?2]
+@PART[opt_sage|opt_vtol_wrap?2|opt_vtol_jump?2]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]:HAS[#resourceName[IntakeAir]]
 	{
@@ -181,7 +181,7 @@
 	}
 }
 
-@PART[opt_surge]
+@PART[opt_surge]:NEEDS[ClassicStock]
 {
 	+MODULE[ModuleResourceIntake]
 	{
@@ -223,7 +223,7 @@
 
 // Bubble
 // Wrappers
-@PART[opt_vtol_bubble1|opt_vtol_wrap?1]:NEEDS[B9PartSwitch]
+@PART[opt_vtol_bubble1|opt_vtol_wrap?1]:NEEDS[B9PartSwitch,ClassicStock]
 {
 	@description ^= :$: <br><color="green">Air-breathing mode accepts different fuels.</color>
 	MODULE
@@ -310,7 +310,7 @@
 
 // Helicarrier
 // Valkyrie Tilt
-@PART[opt_vtol_hc1|opt_vtol_jumpa1]:NEEDS[B9PartSwitch]
+@PART[opt_vtol_hc1|opt_vtol_jumpa1]:NEEDS[B9PartSwitch,ClassicStock]
 {
 	@description ^= :$: <br><color="green">Air-breathing mode accepts different fuels.</color>
 	MODULE
@@ -396,7 +396,7 @@
 }
 
 // Sky Light
-@PART[opt_vtol_heli1]:NEEDS[B9PartSwitch]
+@PART[opt_vtol_heli1]:NEEDS[B9PartSwitch,ClassicStock]
 {
 	@description ^= :$: <br><color="green">Air-breathing mode accepts different fuels.</color>
 	MODULE

@@ -5,7 +5,7 @@
 // J-92 Nebula Shcramjet
 // J-60 ScreamJet
 // J-60D Hybrid ScreamJet
-@PART[opt_mk2_engine_short,J61,opt_nebula_engine,turboRamJetj_60|turboRamJetj_60d]// :NEEDS[something]
+@PART[opt_mk2_engine_short,J61,opt_nebula_engine,turboRamJetj_60|turboRamJetj_60d]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX],0
 	{
@@ -24,7 +24,7 @@
 		}
 	}
 }
-@PART[opt_nebula_engine]// :NEEDS[something]
+@PART[opt_nebula_engine]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX],1
 	{
@@ -51,7 +51,7 @@
 
 // Helicarrier
 // Valkyrie tilt
-@PART[opt_vtol_hc1|opt_vtol_jumpa1]// :NEEDS[something]
+@PART[opt_vtol_hc1|opt_vtol_jumpa1]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX],0
 	{
@@ -75,7 +75,7 @@
 }
 
 // Sky Light
-@PART[opt_vtol_heli1]// :NEEDS[something]
+@PART[opt_vtol_heli1]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[FanLiquid]]
 	{
@@ -96,7 +96,7 @@
 }
 
 // LP-J "Downswell"
-@PART[opt_vtol_lpj1]// :NEEDS[something]
+@PART[opt_vtol_lpj1]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[FanLiquid]]
 	{
@@ -119,7 +119,7 @@
 
 // Wrapper engines
 // Bubble
-@PART[opt_vtol_wrap?1|opt_vtol_bubble1]// :NEEDS[something]
+@PART[opt_vtol_wrap?1|opt_vtol_bubble1]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[IntakeAir]]
 	{
@@ -146,7 +146,7 @@
 // Helicarrier
 // J Linear Aerospike
 // Stail Linear Aerospike
-@PART[opt_vtol_wrap?1|opt_vtol_jump?1|opt_vtol_hc1|j_linear_aerospike|b_linear_aerospike]// :NEEDS[something]
+@PART[opt_vtol_wrap?1|opt_vtol_jump?1|opt_vtol_hc1|j_linear_aerospike|b_linear_aerospike]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
 	{
@@ -172,7 +172,7 @@
 
 // ARI-75 LFO Engine
 // LP-R 01 "Prominence"
-@PART[AAengine|opt_vtol_lpr1]// :NEEDS[something]
+@PART[AAengine|opt_vtol_lpr1]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[Air-augmented]]
 	{
@@ -227,7 +227,7 @@
 
 // ARI-73 LF Engine
 // LP-R 02 "Irradiance"
-@PART[arie73|opt_vtol_lpr2]:NEEDS[CryoEngines|KerbalAtomics]
+@PART[arie73|opt_vtol_lpr2]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[#engineID[Air-augmented]]
 	{
@@ -256,7 +256,7 @@
 
 // Dark Drive
 // J-60D Hybrid ScreamJet
-@PART[engine_darkDrive|turboRamJetj_60d]// :NEEDS[something]
+@PART[engine_darkDrive|turboRamJetj_60d]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
 	{
@@ -281,7 +281,7 @@
 }
 
 // Bubble
-@PART[opt_vtol_bubble1]// :NEEDS[something]
+@PART[opt_vtol_bubble1]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX]:HAS[@PROPELLANT[Oxidizer]]
 	{
@@ -306,7 +306,7 @@
 }
 
 // J-81 Nacelle; No Isp buff
-@PART[j81turbojet]// :NEEDS[something]
+@PART[j81turbojet]:NEEDS[ClassicStock]
 {
 	@MODULE[ModuleEnginesFX],1
 	{
@@ -325,7 +325,7 @@
 // # Special
 
 // EggDog
-@PART[opt_vtol_egg|opt_egg]// :NEEDS[something]
+@PART[opt_vtol_egg|opt_egg]:NEEDS[ClassicStock]
 {
 	@VIspVac3K *= 1.5
 	@VIspASL3K *= 1.5

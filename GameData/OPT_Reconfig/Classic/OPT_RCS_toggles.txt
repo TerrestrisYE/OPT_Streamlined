@@ -1,9 +1,9 @@
-@PART:HAS[#manufacturer[OPT?Aerospace?Division],#TankTag[OPTSAS]]
+@PART:HAS[#manufacturer[OPT?Aerospace?Division],#TankTag[OPTSAS]]:NEEDS[B9PartSwitch,ClassicStock]
 {
 	!MODULE[ModuleB9PartSwitch]:HAS[#moduleID[OPTSAS]] {}
 }
 
-@PART:HAS[#manufacturer[OPT?Aerospace?Division],@MODULE[ModuleRCSFX]:HAS[#resourceName[MonoPropellant]]]:NEEDS[B9PartSwitch]
+@PART:HAS[#manufacturer[OPT?Aerospace?Division],@MODULE[ModuleRCSFX]:HAS[#resourceName[MonoPropellant]]]:NEEDS[B9PartSwitch,ClassicStock]
 {
 	@description ^= :$: <br><color="green">RCS accepts different fuels.</color>
 	MODULE
@@ -202,22 +202,22 @@
 	}
 }
 
-@PART[opt_oms_black]:NEEDS[B9PartSwitch,CommunityResourcePack]
-{
-	+MODULE[ModuleB9PartSwitch]:HAS[#moduleID[OPTRCS]]
-	{
-		@moduleID = OPTOMS
-		@switcherDescription = OMS Mode
-		@switcherDescriptionPlural = OMS Modes
-		@SUBTYPE,*
-		{
-			@MODULE
-			{
-				@IDENTIFIER
-				{
-					@runningEffectName = running_oms
-				}
-			}
-		}
-	}
-}
+// @PART[opt_oms_black]:NEEDS[B9PartSwitch,CommunityResourcePack]
+// {
+	// +MODULE[ModuleB9PartSwitch]:HAS[#moduleID[OPTRCS]]
+	// {
+		// @moduleID = OPTOMS
+		// @switcherDescription = OMS Mode
+		// @switcherDescriptionPlural = OMS Modes
+		// @SUBTYPE,*
+		// {
+			// @MODULE
+			// {
+				// @IDENTIFIER
+				// {
+					// @runningEffectName = running_oms
+				// }
+			// }
+		// }
+	// }
+// }
