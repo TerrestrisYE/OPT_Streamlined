@@ -1,5 +1,9 @@
 OPT Legacy Spaceplane Parts
 
+3.1
+
+* Updated "Dark Energy" power spheres to hold and use Dark Goo, not XenonGas.
+
 3.0
 
 * Added KerbalChangelog support.
