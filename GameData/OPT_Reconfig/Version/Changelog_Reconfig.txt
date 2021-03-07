@@ -1,6 +1,12 @@
 OPT Reconfig
 
 
+3.1.1
+
+* Added SystemHeat detection to B9-involved converter modules.
+* Fixed new CryoEngines problem due to VIsp config.
+
+
 3.1
 
 * Added kOS Processor to all drone cores.
@@ -19,6 +25,7 @@ OPT Reconfig
 * Updated Tweakscale configs to be less likely to be overlapped by foreign Tweakscale modlets which then cause fatal exceptions.
 * Updated file names and NEEDS concerning CRP vs Classic Stock to reduce likelihood of fatal issues concerning WBI play mode switcher.
 * Updated detection concerning stock inventory system.
+
 
 3.0
 
