@@ -1,6 +1,11 @@
 OPT Reconfig
 
 
+3.1.2
+
+* Fixed SystemHeat detection. It was expecting a catch-all patch which isn't as abundant in players installs as I assumed.
+
+
 3.1.1
 
 * Added SystemHeat detection to B9-involved converter modules.
