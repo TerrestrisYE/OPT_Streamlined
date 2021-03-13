@@ -1,13 +1,20 @@
 OPT Legacy Spaceplane Parts
 
+3.1.2
+
+* Fixed an error in the DropTanks patch.
+
+
 3.1.1
 
 * Fixed new CryoEngines problem due to VIsp config.
 * Moved VIsp config to OPT Reconfig.
 
+
 3.1
 
 * Updated "Dark Energy" power spheres to hold and use Dark Goo, not XenonGas.
+
 
 3.0
 
