@@ -1,6 +1,17 @@
 OPT Reconfig
 
 
+3.2
+
+* Added Feature Bias "B" tweakable. Edit the values in `OPT_Reconfig/OPT_00Tweak.cfg` to your liking. Not tested for use with RealismOverhaul but should still work just fine. This tweakable allows for:
+  * [1] Reducing the handwavium nature of most OPT engines and the "Tidal Force" (fuel cell) power spheres: give them stockalike or more realistic:tm: behavior.
+  * [2] Option [1] + Deleting the Dark Drive, WarpJets, Bubble engine, and "Dark Energy" (fusion) power spheres.
+* Enabled all OPT body parts to hold IntakeAtm for maximum use of WarpJets.
+* Fixed redundant FFT Antimatter containment module on parts.
+* Fixed other fatal Classic Stock issues.
+* Improved or fixed integration with Classic Stock and Rational Resources.
+
+
 3.1.2
 
 * Fixed SystemHeat detection. It was expecting a catch-all patch which isn't as abundant in players installs as I assumed.
