@@ -6,9 +6,9 @@ OPT Reconfig
 * Adjusted Dark Drive options to detect "SystemHeatConverters" to hopefully cure System Heat conflict.
 * Created Extras folder containing:
   * OPT_Reconfig_CryoEngines.cfg - Except for RO users, this has been moved out and is now completely optional.
-  * OPT_Preconfig_LessHandwavium.cfg - Changes engine behaviors and Tidal Force power spheres to be more "stockalike" or "realistic."
-  * OPT_Preconfig_ZeroHandwavium.cfg - Includes the former and deletes the "Dark Energy" power spheres and end-game engines.
-  * OPT_Preconfig_LessB9ForTweakScale.cfg - Disables B9 toggles for engines and converters as TweakScale doesn't handle them well.
+  * OPT_Reconfig_LessHandwavium.cfg - Changes engine behaviors and Tidal Force power spheres to be more "stockalike" or "realistic."
+  * OPT_Reconfig_ZeroHandwavium.cfg - Includes the former and deletes the "Dark Energy" power spheres and end-game engines.
+  * OPT_Reconfig_LessB9ForTweakScale.cfg - Disables B9 toggles for engines and converters as TweakScale doesn't handle them well.
 * Fixed OPTSAS problem.
 
 
