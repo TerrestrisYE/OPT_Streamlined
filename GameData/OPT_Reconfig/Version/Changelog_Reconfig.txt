@@ -1,6 +1,11 @@
 OPT Reconfig
 
 
+3.2.1
+
+* Adjusted Dark Drive options to detect "SystemHeatConverters" to cure System Heat conflict.
+
+
 3.2
 
 * Added Feature Bias "B" tweakable. Edit the values in `OPT_Reconfig/OPT_00Tweak.cfg` to your liking. Not tested for use with RealismOverhaul but should still work just fine. This tweakable allows for:
