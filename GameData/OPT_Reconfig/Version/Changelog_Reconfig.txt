@@ -1,6 +1,20 @@
 OPT Reconfig
 
 
+3.4
+
+* Changed life support resources into a discrete B9 switch module on crewed parts.
+* Fixed issue with missing keys on EggDog engines when CryoEngines installed.
+* Fixed missing Oxidizer gauge on EggDog and Bubble engines.
+* Fixed other issues with WBI Classic Stock and CryoEngines:
+  * Default tank amounts were wrong.
+  * Made OmniStorage default to LiquidFuel, not Propellium, when OPT_Reconfig_CryoEngines not active.
+  * Made air-breathing fuel mix switcher (in engines) default to LiquidFuel, not Propellium, when OPT_Reconfig_CryoEngines not active.
+* WBI Stress!
+  * Allowed entertainment center to not need a connection to the homeworld.
+  * Discounted microgravity stress except when Less or Zero Handwavium active.
+
+
 3.3
 
 * Adjusted Dark Drive options to detect "SystemHeatConverters" to hopefully cure System Heat conflict.
