@@ -1,6 +1,13 @@
 OPT Reconfig
 
 
+3.4.1
+
+* Fixed lingering OPT SAS problem(s).
+* Fixed excessive EC demand of 2.5m Dark Energy power sphere's Dark Goo regeneration.
+* Increased drag power of OPT airbrakes.
+
+
 3.4
 
 * Changed life support resources into a discrete B9 switch module on crewed parts.
